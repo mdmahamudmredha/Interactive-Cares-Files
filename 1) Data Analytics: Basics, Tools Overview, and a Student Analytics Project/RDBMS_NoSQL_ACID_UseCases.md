@@ -176,3 +176,58 @@ NoSQL মানে “Not Only SQL” — এখানে ডেটা টেব
 3. **Chat Application** — দ্রুত key-value based message storage (Redis)।
 
 
+
+
+
+
+
+
+---
+
+## **১. RDBMS গ্রুপ**
+
+(MySQL, PostgreSQL, Oracle, Microsoft SQL Server, MariaDB, SQLite)
+
+**সবাই মূলত SQL (Structured Query Language)** ব্যবহার করে।
+তবে vendor-specific variation থাকে — যাকে বলা হয় **dialect**।
+
+| Database             | Query Language                      | নোট                                             |
+| -------------------- | ----------------------------------- | ----------------------------------------------- |
+| MySQL                | SQL (MySQL dialect)                 | সাধারণ SQL, কিছু MySQL-specific extension       |
+| PostgreSQL           | SQL (PostgreSQL dialect) + PL/pgSQL | Advanced features (CTE, JSON, window functions) |
+| Oracle               | SQL (Oracle SQL dialect) + PL/SQL   | PL/SQL দিয়ে stored procedure লেখা হয়            |
+| Microsoft SQL Server | T-SQL (Transact-SQL)                | Microsoft-এর SQL variation                      |
+| MariaDB              | SQL (MySQL dialect)                 | MySQL-compatible                                |
+| SQLite               | SQL (SQLite dialect)                | Lightweight SQL subset                          |
+
+📌 মানে—তারা সবাই **SQL ভিত্তিক** query language ব্যবহার করে, কিন্তু syntax বা ফিচারে কিছু পার্থক্য থাকতে পারে।
+
+---
+
+## **২. NoSQL গ্রুপ**
+
+(MongoDB, Cassandra, Redis, Neo4j, Couchbase, DynamoDB)
+
+এরা traditional SQL না — বরং নিজেদের আলাদা query method বা API ব্যবহার করে।
+
+| Database       | Type                       | Query Language / Method                   | Example                                          |
+| -------------- | -------------------------- | ----------------------------------------- | ------------------------------------------------ |
+| MongoDB        | Document Store             | MongoDB Query Language (MQL)              | `db.users.find({ age: { $gt: 25 } })`            |
+| Cassandra      | Wide-Column Store          | CQL (Cassandra Query Language) — SQL-like | `SELECT * FROM users WHERE id=1;`                |
+| Redis          | Key-Value Store            | Redis Commands (CLI বা API call)          | `SET user:1 "John"`                              |
+| Neo4j          | Graph Database             | Cypher Query Language                     | `MATCH (p:Person)-[:FRIEND]->(f) RETURN f.name;` |
+| Couchbase      | Document + Key-Value Store | N1QL (SQL-like for JSON)                  | `SELECT name FROM users WHERE age > 25;`         |
+| DynamoDB (AWS) | Key-Value + Document Store | PartiQL (SQL-like) বা AWS SDK API calls   | `SELECT * FROM Users WHERE Age > 25`             |
+
+---
+
+## **সংক্ষেপে বোঝা**
+
+* **RDBMS → SQL (একই বেসিক স্ট্রাকচার, vendor-specific dialect)**
+* **NoSQL → SQL নয়**, কিন্তু কিছু NoSQL (Cassandra, Couchbase, DynamoDB) SQL-like syntax সাপোর্ট করে যাতে শিখতে সহজ হয়।
+* অনেক NoSQL সরাসরি JSON, key-value pair, বা graph traversal পদ্ধতি ব্যবহার করে।
+
+
+
+
+
